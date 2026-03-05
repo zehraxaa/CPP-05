@@ -14,7 +14,18 @@
 
 int main()
 {
-	
+	try {
+		Bureaucrat b1;
+		b1.setGrade(149);
+		std::cout<<b1<<std::endl;
+		b1.decreament();
+		std::cout<<b1<<std::endl;
+		b1.decreament();
+		std::cout<<b1<<std::endl;
+	}
+	catch(std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
 
 
 	

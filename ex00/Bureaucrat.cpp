@@ -47,16 +47,32 @@ int Bureaucrat::getGrade() const
 	return this->grade;
 }
 
+void Bureaucrat::setGrade(int gr)
+{
+	if (gr <= 150 && gr >= 0)
+		grade = gr;
+	else
+		return;
+}
+
 void Bureaucrat::increament()
 {
-	if (this->grade < 1)
-		this->grade += 1;
+	if (this->grade > 1)
+		this->grade -= 1;
 	else
 		throw GradeTooHighException();
 }
 
+void Bureaucrat::decreament()
+{
+	if (this->grade < 150)
+		this->grade += 1;
+	else
+		throw GradeTooLowException();
+}
+
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)
 {
-	std::cout<<b.getName()<<", bureaucrat grade "<<b.getGrade()<<std::endl;
+	std::cout<<b.getName()<<", bureaucrat grade "<<b.getGrade()<<"."<<std::endl;
 	return os;
 }
