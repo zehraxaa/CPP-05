@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 13:50:23 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/04 19:03:57 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/10 00:21:17 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 Bureaucrat::Bureaucrat() : name("Pam"), grade(75)
 {
 	std::cout<<"Bureaucrat default constructor called"<<std::endl;
+}
+
+Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
+{
+	std::cout<<"Bureaucrat parameterized constructor called"<<std::endl;
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	
+	this->grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade)
@@ -47,14 +58,6 @@ int Bureaucrat::getGrade() const
 	return this->grade;
 }
 
-void Bureaucrat::setGrade(int gr)
-{
-	if (gr <= 150 && gr >= 0)
-		grade = gr;
-	else
-		return;
-}
-
 void Bureaucrat::increament()
 {
 	if (this->grade > 1)
@@ -69,6 +72,16 @@ void Bureaucrat::decreament()
 		this->grade += 1;
 	else
 		throw GradeTooLowException();
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade too high! Try lower than 1";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade too low. Try higher than 150";
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)
