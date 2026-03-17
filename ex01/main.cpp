@@ -11,10 +11,15 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
-	
+	Form f;
+	Bureaucrat b;
+
+	std::cout<<f<<std::endl;
+	b.signForm(f);
 	
 	return 0;
 }
