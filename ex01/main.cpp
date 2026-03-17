@@ -16,9 +16,10 @@
 int main()
 {
 	Form f("izin kagidi", false, 71, 70);
-	Bureaucrat b;
+	Bureaucrat b("Joshua", 70);
 
-	std::cout<<b<<std::endl;
+	std::cout<<b<<std::endl<<std::endl;
+	std::cout<<f<<std::endl;
 	b.signForm(f);
 	std::cout<<f<<std::endl;
 	
