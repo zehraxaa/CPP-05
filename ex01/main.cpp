@@ -15,11 +15,12 @@
 
 int main()
 {
-	Form f;
+	Form f("izin kagidi", false, 71, 70);
 	Bureaucrat b;
 
-	std::cout<<f<<std::endl;
+	std::cout<<b<<std::endl;
 	b.signForm(f);
+	std::cout<<f<<std::endl;
 	
 	return 0;
 }

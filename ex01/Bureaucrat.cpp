@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("Pam"), grade(75)
@@ -82,18 +83,18 @@ void Bureaucrat::signForm(Form& form) const
 	}
 	catch(std::exception &e)
 	{
-		std::cout<<this->name<<" couldn't sign "<<form.getName()<<" because "<<e.what();
+		std::cout<<this->name<<" couldn't sign "<<form.getName()<<" because "<<e.what()<<std::endl;
 	}
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade too high! Try lower than 1";
+	return "Bureaucrat's grade too high!";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return "Grade too low. Try higher than 150";
+	return "Bureaucrat's grade too low";
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)
