@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 00:37:11 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/11 00:57:04 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/22 00:11:48 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ Form::Form() : name("default"), sign(false), gSign(50), gExecute(10)
 	std::cout<<"Form default constructor called"<<std::endl;
 }
 
-Form::Form(const std::string n, bool s, const int gS, const int gE)
+Form::Form(const std::string n, const int gS, const int gE)
 	: name(n),
-	  sign(s),
 	  gSign(gS),
 	  gExecute(gE)
 {
+	this->sign = false;
 	std::cout<<"Form parameterized constructor called"<<std::endl;
 	if (gS > 150 || gE > 150)
 		throw Form::GradeTooLowException();
@@ -64,12 +64,9 @@ std::string Form::getName() const
 	return this->name;
 }
 
-std::string Form::getSign() const
+bool Form::getSign() const
 {
-	if (this->sign == 0)
-		return "False";
-	else
-		return "True";
+	return sign;
 }
 
 int Form::getGradeSign() const
@@ -95,7 +92,7 @@ const char* Form::GradeTooLowException::what() const throw()
 std::ostream& operator<<(std::ostream &os, const Form &f)
 {
 	std::cout<<"Form Name: "<<f.getName()<<std::endl;
-	std::cout<<"Is Form signed?: "<<f.getSign()<<std::endl;
+	std::cout<<"Is Form signed?: "<<(f.getSign() ? "True" : "False")<<std::endl;
 	std::cout<<"Form sign grade: "<<f.getGradeSign()<<std::endl;
 	std::cout<<"Form execute grade: "<<f.getGradeExecute()<<std::endl;
 	return os;

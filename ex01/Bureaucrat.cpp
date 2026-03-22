@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 13:50:23 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/11 00:22:39 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/20 00:44:03 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void Bureaucrat::decreament()
 
 void Bureaucrat::signForm(Form& form) const
 {
+	if (form.getSign())
+		return ;
 	try {
 		form.beSigned(*this);
 		std::cout<<this->name<<" signed "<<form.getName()<<std::endl;

@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 00:16:49 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/11 00:42:41 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/22 00:03:43 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form
 		const int gExecute;
 	public:
 		Form();
-		Form(const std::string n, bool s, const int gS, const int gE);
+		Form(const std::string n, const int gS, const int gE);
 		Form(const Form &other);
 		Form &operator=(const Form &other);
 		~Form();
@@ -35,7 +35,7 @@ class Form
 		void beSigned(const Bureaucrat& b);
 		
 		std::string getName() const;
-		std::string getSign() const;
+		bool getSign() const;
 		int getGradeSign() const;
 		int getGradeExecute() const;
 	
