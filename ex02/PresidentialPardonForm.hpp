@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 16:14:47 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/19 16:50:41 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/22 23:43:13 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ class PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 
 		void execute(Bureaucrat const & executor) const;
-
-		class FormNotSignedException : public std::exception
-		{
-			public:
-				const char* what() const throw();	
-		};
 };
 
 #endif

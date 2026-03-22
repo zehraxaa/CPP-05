@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 16:20:06 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/22 21:11:58 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/22 23:44:10 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,11 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
-const char* PresidentialPardonForm::FormNotSignedException::what() const throw()
-{
-	return "Form not signed yet";
-}
-
 void PresidentialPardonForm::execute(const Bureaucrat& executor) const
 {
 	if (this->getSign() == false)
 	{
-		throw PresidentialPardonForm::FormNotSignedException();
+		throw AForm::FormNotSignedException();
 		return;
 	}
 	if (executor.getGrade() <= this->getGradeExecute())
