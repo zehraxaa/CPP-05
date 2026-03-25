@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 14:18:23 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/22 23:43:20 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/24 00:47:03 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ class AForm
 			const char* what() const throw();	
 	};
 	class FormNotSignedException : public std::exception
-		{
-			public:
-				const char* what() const throw();	
-		};
+	{
+		public:
+			const char* what() const throw();	
+	};
 };
 
 std::ostream& operator<<(std::ostream &os, const AForm &f);

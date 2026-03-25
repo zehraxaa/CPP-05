@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 23:41:51 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/23 00:24:27 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/23 00:35:40 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 		outfile << "       |o|        | |         | |" << std::endl;
 		outfile << "       |.|        | |         | |" << std::endl;
 		outfile << "       |.|        | |         | |" << std::endl;
-		outfile << "jgs \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_" << std::endl;
+		outfile << "    \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/_" << std::endl;
 		outfile.close();
 		std::cout<<this->target<<"_shrubbery form created"<<std::endl;
 	}

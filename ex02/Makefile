@@ -1,4 +1,4 @@
-SRC = main.cpp Bureaucrat.cpp AForm.cpp  PresidentialPardonForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp  PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 
 CXX = c++
 
