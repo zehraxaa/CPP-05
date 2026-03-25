@@ -6,14 +6,16 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:19:09 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/25 21:08:35 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/25 23:02:00 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -35,4 +37,13 @@ int main()
 	std::cout<<form3<<std::endl;
 	b1.signForm(form3);
 	b1.executeForm(form3);
+
+	std::cout<<std::endl<<"***COMPANY HIRED A NEW INTERN***"<<std::endl<<std::endl;
+	
+	Intern internboy;
+	AForm *rrf;
+	rrf = internboy.makeForm("presidential pardon", "Sofia");
+	std::cout<<"The form internboy created: "<<std::endl<<*rrf<<std::endl;
+
+	delete rrf;
 }
