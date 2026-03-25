@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:19:09 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/25 23:02:00 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/26 00:31:29 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int main()
 {
 	std::srand(std::time(NULL));
-	
+	/*
 	Bureaucrat b1("Zehra", 1);
 	PresidentialPardonForm form1("Form1");
 	ShrubberyCreationForm form2("Form2");
@@ -37,13 +37,18 @@ int main()
 	std::cout<<form3<<std::endl;
 	b1.signForm(form3);
 	b1.executeForm(form3);
-
+	*/
 	std::cout<<std::endl<<"***COMPANY HIRED A NEW INTERN***"<<std::endl<<std::endl;
 	
 	Intern internboy;
 	AForm *rrf;
-	rrf = internboy.makeForm("presidential pardon", "Sofia");
-	std::cout<<"The form internboy created: "<<std::endl<<*rrf<<std::endl;
+	try {
+		rrf = internboy.makeForm("shrubbery creation", "Sofia");
+		std::cout<<"The form internboy created: "<<std::endl<<*rrf<<std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout<<e.what()<<std::endl;
+	}
 
 	delete rrf;
 }

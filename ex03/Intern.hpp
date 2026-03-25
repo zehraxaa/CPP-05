@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 21:13:58 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/25 22:37:35 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/26 00:32:34 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include <string.h>
 
 class Intern
 {

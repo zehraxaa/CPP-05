@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 21:13:07 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/25 22:56:23 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/26 00:26:54 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ AForm* Intern::makeForm(std::string fName, std::string target)
 	for (int i=0; i<3; i++)
 	{
 		if (levels[i] == fName)
+		{
+			std::cout<<"Intern creates "<<fName<<std::endl;
 			return (this->*func[i])(target);
+		}
 	}
 	std::cout<<fName<<" ";
 	throw FormNotFoundException();
