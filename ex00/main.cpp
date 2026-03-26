@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 13:54:47 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/10 00:35:42 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/26 15:21:15 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ int main()
 	Bureaucrat *b1 = NULL;
 	
 	try {
-		b1 = new Bureaucrat("Josh", -100000);
-
-		std::cout<<"What is b? "<<*b1;
+		b1 = new Bureaucrat("Josh", -1);
+		std::cout<<*b1;
 	}
 	catch(std::exception& e) {
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	if (b1)

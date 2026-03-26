@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 23:41:51 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/23 00:35:40 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/27 00:02:39 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 		
 		if (!outfile.is_open())
 		{
-			std::cerr<<"Error! File could not opened."<<std::endl;
+			std::cout<<"Error! File could not opened."<<std::endl;
 			return;
 		}
 		outfile << "               ,@@@@@@@," << std::endl;

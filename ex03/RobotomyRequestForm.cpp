@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 00:26:07 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/26 00:21:41 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/27 00:02:39 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 		if (std::rand() % 2 == 0)
 			std::cout<<this->target<<" Robotomy Request successful"<<std::endl;
 		else {
-			std::cerr<<this->target<<" ";
+			std::cout<<this->target<<" ";
 			throw RobotomyRequestFailedException();
 		}
 	}
