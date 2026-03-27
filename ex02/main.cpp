@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/18 17:19:09 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/27 00:03:42 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/27 14:44:22 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 {
 	std::srand(std::time(NULL));
 	
-	Bureaucrat b1("Zehra", 45);
+	Bureaucrat b1("Zehra", 15);
 	PresidentialPardonForm form1("Carl");
 	ShrubberyCreationForm form2("aaa");
 	RobotomyRequestForm form3("Sofia");
@@ -31,7 +31,7 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout<<e.what()<<std::endl;
+		std::cerr<<e.what()<<std::endl;
 	}
 	std::cout<<std::endl;
 	
@@ -42,7 +42,7 @@ int main()
 	}
 	catch(std::exception &e)
 	{
-		std::cout<<e.what()<<std::endl;
+		std::cerr<<e.what()<<std::endl;
 	}
 	std::cout<<std::endl;
 	
@@ -53,6 +53,16 @@ int main()
 	}
 	catch(std::exception &e)
 	{
-		std::cout<<e.what()<<std::endl;
+		std::cerr<<e.what()<<std::endl;
+	}
+	std::cout<<std::endl;
+	
+	try {
+		std::cout<<"Trying to resign "<<form1.getName()<<":"<<std::endl;
+		b1.signForm(form1);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr<<e.what()<<std::endl;
 	}
 }

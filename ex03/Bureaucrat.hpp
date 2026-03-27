@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 13:50:28 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/19 16:56:06 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/27 14:43:41 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ class Bureaucrat
 				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+		class FormAlreadySignedException : public std::exception
 		{
 			public:
 				const char* what() const throw();

@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 13:50:23 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/20 00:44:03 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/27 14:41:19 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,14 @@ void Bureaucrat::decreament()
 void Bureaucrat::signForm(Form& form) const
 {
 	if (form.getSign())
-		return ;
+		throw FormAlreadySignedException();
 	try {
 		form.beSigned(*this);
 		std::cout<<this->name<<" signed "<<form.getName()<<std::endl;
 	}
 	catch(std::exception &e)
 	{
-		std::cout<<this->name<<" couldn't sign "<<form.getName()<<" because "<<e.what()<<std::endl;
+		std::cerr<<this->name<<" couldn't sign "<<form.getName()<<" because "<<e.what()<<std::endl;
 	}
 }
 
@@ -97,6 +97,11 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Bureaucrat's grade too low";
+}
+
+const char* Bureaucrat::FormAlreadySignedException::what() const throw()
+{
+	return "Form is already signed";
 }
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &b)

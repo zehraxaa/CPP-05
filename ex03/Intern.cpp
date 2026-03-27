@@ -6,7 +6,7 @@
 /*   By: aaydogdu <aaydogdu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 21:13:07 by aaydogdu          #+#    #+#             */
-/*   Updated: 2026/03/26 14:10:51 by aaydogdu         ###   ########.fr       */
+/*   Updated: 2026/03/27 14:52:16 by aaydogdu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ AForm* Intern::makeForm(std::string fName, std::string target)
 			return (this->*func[i])(target);
 		}
 	}
-	std::cout<<fName<<" ";
+	std::cerr<<fName<<" ";
 	throw FormNotFoundException();
 }
